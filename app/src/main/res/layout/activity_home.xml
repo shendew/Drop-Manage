@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:gravity="center_horizontal"
+    android:weightSum="7"
+    tools:context=".home">
+
+
+    <!--Creating the menu grid button-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+
+        android:background="@drawable/home_bar"
+        android:gravity="right"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <com.skydoves.elasticviews.ElasticImageView
+                android:id="@+id/searchview"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_baseline_search_24" />
+
+            <com.skydoves.elasticviews.ElasticImageView
+                android:id="@+id/imageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_outline_supervisor_account_24" />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dashboard"
+            android:textColor="#fafafa"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/home_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Loading..."
+            android:textColor="#fafafa"
+            android:textSize="25sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="5"
+        android:orientation="vertical"
+
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+
+
+            >
+
+            <!--   <androidx.cardview.widget.CardView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="20dp"
+
+                   app:cardCornerRadius="8dp"
+                   app:cardElevation="2dp">-->
+
+
+
+
+                        <com.skydoves.elasticviews.ElasticImageView
+
+                           android:id="@+id/ap1"
+                           android:layout_width="150dp"
+                           android:layout_height="150dp"
+                           android:clickable="true"
+                           android:src="@drawable/pro"
+                            android:layout_margin="10dp"
+
+                           />
+
+                       <!--  <ImageView
+                             android:layout_width="150dp"
+                             android:layout_height="150dp"
+                             android:src="@drawable/pro" /> -->
+
+
+            <!--
+
+                          </androidx.cardview.widget.CardView>
+
+                          <androidx.cardview.widget.CardView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_margin="10dp"
+
+
+                              app:cardCornerRadius="8dp"
+                              app:cardElevation="2dp">-->
+
+
+
+                                  <com.skydoves.elasticviews.ElasticImageView
+
+                                      android:id="@+id/ao1"
+                                      android:layout_width="150dp"
+                                      android:layout_height="150dp"
+                                      android:clickable="true"
+                                      android:layout_margin="10dp"
+                                      android:src="@drawable/order"
+
+                                      />
+
+                                  <!--   <ImageView
+                                        android:layout_width="150dp"
+                                        android:layout_height="150dp"
+                                        android:src="@drawable/order" />
+
+
+
+                </androidx.cardview.widget.CardView>-->
+            </LinearLayout>
+
+
+            <!--Secound Row-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+
+
+            >
+
+            <!--  <androidx.cardview.widget.CardView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="20dp"
+                  app:cardElevation="2dp"
+                  app:cardCornerRadius="8dp"
+
+
+                  >-->
+
+                     <com.skydoves.elasticviews.ElasticImageView
+
+                          android:id="@+id/cs1"
+                          android:layout_width="150dp"
+                          android:layout_height="150dp"
+                          android:clickable="true"
+                          android:src="@drawable/how"
+                         android:layout_margin="10dp"
+
+                          />
+
+                      <!--  <ImageView
+                          android:layout_width="150dp"
+                          android:layout_height="150dp"
+                          android:src="@drawable/how"
+                          />
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="8dp"
+
+
+                >-->
+
+
+                    <com.skydoves.elasticviews.ElasticImageView
+
+                        android:id="@+id/ab1"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:clickable="true"
+                        android:src="@drawable/about"
+                        android:layout_margin="10dp"
+
+                        />
+                    <!--  <ImageView
+                          android:layout_width="150dp"
+                          android:layout_height="150dp"
+
+                          android:src="@drawable/about"
+                          />
+
+
+
+              </androidx.cardview.widget.CardView>-->
+
+          </LinearLayout>
+
+
+      </LinearLayout>
+
+
+
+
+  </LinearLayout>

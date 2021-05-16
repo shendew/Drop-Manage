@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Drop Manage</string>
+    <string name="how_to_use">
+
+        <p> <b>About this app,</b> </p>
+<p>This app developed for all sellers and dropshippers.You can manage your selling products and selling orders.Order process,shipped,finished monitor make easer your works.You can update your orders,products.This app using local database. Then we added backup option. When you log to app on another phone using login methods. You can get your database backup. We think your sellings be easy with our app.
+</p>
+        <p><b>How To Use,</b></p>
+        <p><b>Add Product</b></p>
+        <p>You can add products using all products page.</p>
+        <p>all products > add new product
+note{
+product id ,product title ,product links are required.}</p>
+        <p><b>Delete Product</b></p>
+        <p>You can delete a product simply tap the product and choose delete in popup window.</p>
+        <p><b>Update Product </b></p>
+        <p>You can update a product simply tap the product and choose edit in popup window.and you can edit product.
+after edit your product choose update product</p>
+        <p><b>Add Order</b></p>
+        <p>You can add new order using all orders page.</p>
+        <p>all orders > add new order
+note{order id,order title,order details are required.
+}</p>
+        <p><b>Delete Order</b></p>
+        <p>You can delete a order simply tap the order and choose delete in popup window.</p>
+        <p><b>Update Product</b> </p>
+        <p>You can update a order simply tap the order and choose edit in popup window.and you can edit order.
+after edit your order choose update order.</p>
+        <p><b>Order Status Monitor </b></p>
+        <p>
+You can see color round in a order.
+Green color - order completed
+Yellow Collor - order shipped
+Red Collor - order not shipped</p>
+        <p><b>Search Product or Order</b></p>
+        <p>You can simply search using search page.</p>
+        <p>note{enter correct order id or product id}
+if not match with database you will see no data message.</p>
+
+        <p><b>Account Settings. </b></p>
+        <p>You can edit your account settings and backup details.</p>
+
+
+
+    </string>
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "933082443638",
+    "project_id": "dropshipping-dashboard",
+    "storage_bucket": "dropshipping-dashboard.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933082443638:android:778ad62c73bded754a5457",
+        "android_client_info": {
+          "package_name": "com.kingdew.pos3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933082443638-7352099nf7sr1ai93u0dcad0v8p8bobn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKbRhdZslgQlmww40Xb_YEKgcFE324Jkg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933082443638-7352099nf7sr1ai93u0dcad0v8p8bobn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

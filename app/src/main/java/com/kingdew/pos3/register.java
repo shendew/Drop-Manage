@@ -25,9 +25,9 @@ import java.util.HashMap;
 import java.util.regex.Pattern;
 
 public class register extends AppCompatActivity {
-    EditText signuname,signmail,signpass;
+    EditText signuname,signmail,signpass,veripass;
     ElasticImageView signin;
-    private String uname,mail,pass;
+    private String uname,mail,pass,pass2;
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
     ProgressBar progressBar;
@@ -45,7 +45,7 @@ public class register extends AppCompatActivity {
         signin=findViewById(R.id.sigin_btn);
         progressBar=findViewById(R.id.progressBar);
         progressBar.setVisibility(View.INVISIBLE);
-        //progressBar=new ProgressBar(this);
+        veripass=findViewById(R.id.sign_pass2);
         firebaseAuth=FirebaseAuth.getInstance();
 
 
@@ -55,15 +55,22 @@ public class register extends AppCompatActivity {
                 uname=signuname.getText().toString();
                 mail=signmail.getText().toString();
                 pass=signpass.getText().toString();
+                pass2=veripass.getText().toString();
 
                 if (!uname.isEmpty())
                 {
                     if (!mail.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(mail).matches())
                     {
-                        if (!pass.isEmpty() && pass.length()>5)
+                        if (!pass.isEmpty() && pass.length()>5 && !pass2.isEmpty())
                         {
-                            registeruser(uname,mail,pass);
-                            progressBar.setVisibility(View.VISIBLE);
+                            if (pass==pass2){
+                                registeruser(uname,mail,pass);
+                                progressBar.setVisibility(View.VISIBLE);
+                            }else {
+                                signpass.setError("password doesn't match");
+                                veripass.setError("password doesn't match");
+                            }
+
                         }else
                             {
                             signpass.setError("minimum 6 characters");

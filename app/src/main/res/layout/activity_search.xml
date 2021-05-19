@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/group_19"
+
     tools:context=".search">
 
     <LinearLayout
@@ -36,7 +36,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/edittextround"
             android:ems="15"
-            android:hint="Enter Order Number"
+            android:hint="Enter Order/Product Number"
             android:inputType="textPersonName"
             android:paddingLeft="20dp"
             android:paddingTop="10dp"

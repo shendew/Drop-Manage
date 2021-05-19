@@ -42,7 +42,7 @@ public class User_profile extends AppCompatActivity {
     FirebaseAuth auth=FirebaseAuth.getInstance();
     String uid;
     Button signout;
-    Switch mode;
+   // Switch mode;
     private static final int IMAGEBACK=1;
 
 
@@ -59,14 +59,22 @@ public class User_profile extends AppCompatActivity {
         umail=findViewById(R.id.uemail);
         pro=findViewById(R.id.profile_image);
         signout=findViewById(R.id.signout);
-        mode=findViewById(R.id.mode);
+       // mode=findViewById(R.id.mode);
         user=FirebaseAuth.getInstance().getCurrentUser();
         uid=user.getUid();
-        reference= FirebaseDatabase.getInstance().getReference("USERS").child(uid);
+
+        try {
+            reference= FirebaseDatabase.getInstance().getReference("USERS").child(uid);
+        }catch (Exception e){
+            Toast.makeText(this, "Check Your Connection", Toast.LENGTH_SHORT).show();
+            auth.signOut();
+
+        }
+
         upimref= FirebaseStorage.getInstance().getReference().child("IMAGES");
 
 
-
+/*
         mode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -77,7 +85,7 @@ public class User_profile extends AppCompatActivity {
                 }
             }
         });
-
+*/
 
 
 

@@ -78,13 +78,7 @@ public class ap extends AppCompatActivity {
                         finish();
                     }
                 });
-                builder.setNegativeButton("Finish", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
 
-
-                    }
-                });
                 builder.setNeutralButton("Edit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

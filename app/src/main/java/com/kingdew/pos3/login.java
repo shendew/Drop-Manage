@@ -1,8 +1,10 @@
 package com.kingdew.pos3;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,8 +13,11 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,7 +29,7 @@ import io.paperdb.Paper;
 public class login extends AppCompatActivity {
 
     ElasticImageView btn_login;
-    TextView createacc;
+    TextView createacc,rest;
     EditText lgn_email,lgn_password;
     ProgressBar load;
     CheckBox cb;
@@ -50,6 +55,45 @@ public class login extends AppCompatActivity {
         auth=FirebaseAuth.getInstance();
         load=findViewById(R.id.progressBar2);
         load.setVisibility(View.INVISIBLE);
+        rest=findViewById(R.id.reset);
+
+
+        rest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText resetmail=new EditText(view.getContext());
+                AlertDialog.Builder passrestdialog=new AlertDialog.Builder(view.getContext());
+                passrestdialog.setTitle("Password Reset");
+                passrestdialog.setMessage("Enter your email to reset your password");
+                passrestdialog.setView(resetmail);
+
+                passrestdialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String mail=resetmail.getText().toString();
+                        auth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(login.this, "Password reset link sent", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(login.this, "Password reset link send failed", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                    }
+                });
+                passrestdialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //do nothing
+                    }
+                });
+
+            }
+        });
 
 
 

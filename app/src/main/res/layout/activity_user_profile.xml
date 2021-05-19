@@ -42,6 +42,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:layout_marginBottom="100dp"
             android:layout_height="match_parent">
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -123,7 +124,7 @@
                 android:layout_weight="1"
                 />
         </LinearLayout>
-        <LinearLayout
+       <!-- <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:weightSum="2"
@@ -145,13 +146,14 @@
                 android:layout_weight="1"
                 android:text="TextView" />
         </LinearLayout>
+        -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
 
             android:orientation="horizontal">
 
-            <Switch
+          <!--  <Switch
                 android:id="@+id/mode"
                 android:checked="false"
                 android:paddingEnd="75dp"
@@ -163,6 +165,7 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
+                -->
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"

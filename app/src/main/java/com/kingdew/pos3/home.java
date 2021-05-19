@@ -83,22 +83,29 @@ public class  home extends AppCompatActivity {
             finish();
         }
         String uid=user.getUid();
-        databaseReference= FirebaseDatabase.getInstance().getReference("USERS").child(uid);
+        try {
+            databaseReference= FirebaseDatabase.getInstance().getReference("USERS").child(uid);
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String name=snapshot.child("user_name").getValue().toString();
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String name=snapshot.child("user_name").getValue().toString();
 
-                welcome.setText("Welcome "+name+" ");
+                    welcome.setText("Welcome "+name+" ");
 
-            }
+                }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
+                }
+            });
+        }catch (Exception e){
+            Toast.makeText(context, "Please Contact Admin", Toast.LENGTH_SHORT).show();
+            auth.signOut();
+            finish();
+        }
+
 
 
 

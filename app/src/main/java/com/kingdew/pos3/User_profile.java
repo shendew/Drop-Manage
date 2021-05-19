@@ -3,16 +3,22 @@ package com.kingdew.pos3;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.common.internal.service.Common;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -36,7 +42,11 @@ public class User_profile extends AppCompatActivity {
     FirebaseAuth auth=FirebaseAuth.getInstance();
     String uid;
     Button signout;
+    Switch mode;
     private static final int IMAGEBACK=1;
+
+
+
 
 
 
@@ -49,10 +59,26 @@ public class User_profile extends AppCompatActivity {
         umail=findViewById(R.id.uemail);
         pro=findViewById(R.id.profile_image);
         signout=findViewById(R.id.signout);
+        mode=findViewById(R.id.mode);
         user=FirebaseAuth.getInstance().getCurrentUser();
-         uid=user.getUid();
+        uid=user.getUid();
         reference= FirebaseDatabase.getInstance().getReference("USERS").child(uid);
         upimref= FirebaseStorage.getInstance().getReference().child("IMAGES");
+
+
+
+        mode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    Toast.makeText(User_profile.this, "Checked", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(User_profile.this, "Not Checked", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
 
 
 
@@ -62,8 +88,11 @@ public class User_profile extends AppCompatActivity {
             public void onClick(View view) {
                 auth.signOut();
                 Intent intent=new Intent(User_profile.this,MainActivity.class);
+
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 finish();
+
             }
         });
 
@@ -74,14 +103,20 @@ public class User_profile extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String name=snapshot.child("user_name").getValue().toString();
-                uname.setText(name);
-                String mail=snapshot.child("email").getValue().toString();
-                umail.setText(mail);
-                String pro_link=snapshot.child("image_url").getValue().toString();
-                if (!pro_link.equals("default")){
-                    Glide.with(User_profile.this).load(pro_link).centerCrop().into(pro);
+                try {
+                    String name=snapshot.child("user_name").getValue().toString();
+                    uname.setText(name);
+                    String mail=snapshot.child("email").getValue().toString();
+                    umail.setText(mail);
+                    String pro_link=snapshot.child("image_url").getValue().toString();
+                    if (!pro_link.equals("default")){
+                        Glide.with(User_profile.this).load(pro_link).centerCrop().into(pro);
+                    }
+                }catch (Exception e){
+                    uname.setText("Error");
+                    umail.setText("Error");
                 }
+
 
 
             }
@@ -104,6 +139,9 @@ public class User_profile extends AppCompatActivity {
 
 
     }
+
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -116,7 +154,7 @@ public class User_profile extends AppCompatActivity {
                 imagename.putFile(imagedata).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        Toast.makeText(User_profile.this, "Image Uploaded", Toast.LENGTH_SHORT).show();
+
                         imagename.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                             @Override
                             public void onSuccess(Uri uri) {
@@ -126,15 +164,17 @@ public class User_profile extends AppCompatActivity {
                                     @Override
                                     public void onSuccess(Void aVoid) {
 
-                                        Toast.makeText(User_profile.this, "url Uploaded", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(User_profile.this, "Profile Image Uploaded", Toast.LENGTH_SHORT).show();
                                     }
                                 });
 
 
                             }
+
                         });
 
                     }
+
                 });
 
             }

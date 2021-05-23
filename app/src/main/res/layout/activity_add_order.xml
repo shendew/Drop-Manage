@@ -21,7 +21,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="20dp"
         android:inputType="textPersonName"
-        android:hint="Order ID" />
+        android:hint="@string/order_id" />
 
     <EditText
         android:id="@+id/orderTitle"
@@ -33,7 +33,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="20dp"
         android:inputType="textPersonName"
-        android:hint="Order Title" />
+        android:hint="@string/order_title" />
 
     <EditText
         android:id="@+id/contactDetails"
@@ -45,7 +45,7 @@
         android:layout_marginBottom="20dp"
         android:inputType="textPersonName"
 
-        android:hint="Contact Details" />
+        android:hint="@string/contact_details" />
 
     <EditText
         android:id="@+id/trackingNumber"
@@ -57,7 +57,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="20dp"
         android:inputType="textPersonName"
-        android:hint="Tracking Number" />
+        android:hint="@string/tracking_number"
+        tools:ignore="TextFields" />
 
     <EditText
         android:id="@+id/shippedDate"
@@ -69,8 +70,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="20dp"
         android:inputType="textPersonName"
-        android:hint="Shipped Date"
-         />
+        android:hint="@string/shipped_date"
+        tools:ignore="TextFields" />
 
     <EditText
         android:id="@+id/completedDate"
@@ -82,8 +83,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="20dp"
         android:inputType="textPersonName"
-        android:hint="Completed Date"
-         />
+        android:hint="@string/completed_date"
+        tools:ignore="TextFields" />
 
 
     <com.skydoves.elasticviews.ElasticImageView

@@ -15,8 +15,8 @@ import java.util.List;
 
 public class orderAdaper extends ArrayAdapter<ORDERS> {
 
-    private Context context;
-    private int resource;
+    private final Context context;
+    private final int resource;
     List<ORDERS> orders;
 
     orderAdaper(Context context, int resource, List<ORDERS> orders){

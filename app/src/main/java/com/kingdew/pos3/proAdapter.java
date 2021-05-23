@@ -14,9 +14,9 @@ import java.util.List;
 
 public class proAdapter extends ArrayAdapter {
 
-    private Context context;
-    private int resorces;
-    private List<PRODUCTS> products;
+    private final Context context;
+    private final int resorces;
+    private final List<PRODUCTS> products;
 
 
     proAdapter(Context context, int resorces, List<PRODUCTS> products){

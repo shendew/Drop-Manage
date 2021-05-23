@@ -20,7 +20,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="20dp"
         android:inputType="textPersonName"
-        android:hint="Product ID" />
+        android:hint="@string/product_id" />
 
     <EditText
         android:id="@+id/proTitle"
@@ -32,7 +32,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="20dp"
         android:inputType="textPersonName"
-        android:hint="Product Title" />
+        android:hint="@string/product_title" />
 
     <EditText
         android:id="@+id/prolink"
@@ -44,7 +44,7 @@
         android:layout_marginBottom="20dp"
         android:inputType="textPersonName"
 
-        android:hint="Product Link" />
+        android:hint="@string/product_link" />
 
     <com.skydoves.elasticviews.ElasticImageView
         android:id="@+id/buttonp"

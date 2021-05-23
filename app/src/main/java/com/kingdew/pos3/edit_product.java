@@ -1,21 +1,20 @@
 package com.kingdew.pos3;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.skydoves.elasticviews.ElasticImageView;
 
 public class edit_product extends AppCompatActivity {
     private DbHandler dbHandler;
     private Context context;
-    private Button button;
+    private ElasticImageView button;
     private EditText proid,protitle,prolink;
     private String sproid,sprotitle,sprolink;
 

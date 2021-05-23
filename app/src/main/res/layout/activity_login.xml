@@ -67,6 +67,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Remember Me" />
+
+            <TextView
+                android:id="@+id/reset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:paddingTop="10dp"
+                android:visibility="invisible"
+                android:paddingBottom="10dp"
+                android:text="Forgot password"
+                android:textSize="18dp"
+                android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -77,6 +90,7 @@
             android:padding="5dp"
             android:src="@drawable/button_login"
             tools:ignore="MissingConstraints"
+
             android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -91,21 +105,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:text="Create a new account"
             android:textColor="@color/black"
             android:textSize="18dp"
             android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/reset"
-            android:padding="10dp"
-            android:text="Forgot password"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:gravity="center"
-            />
 
 
     </LinearLayout>
@@ -139,4 +143,16 @@
             android:textSize="25dp"
             android:text="Login" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+
+        android:text="Contact Developer"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kingdew.pos3">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -9,7 +10,8 @@
         android:roundIcon="@drawable/ic_baseline_shopping_bag_24"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pos3">
-        <activity android:name=".User_profile"></activity>
+        <activity android:name=".resetpass"></activity>
+        <activity android:name=".User_profile" />
         <activity android:name=".profile" />
         <activity android:name=".abount" />
         <activity android:name=".edit_product" />
@@ -29,7 +31,7 @@
         </activity>
         <activity android:name=".register" />
         <activity android:name=".login" />
-        <activity android:name=".home"></activity>
+        <activity android:name=".home" />
     </application>
 
 </manifest>

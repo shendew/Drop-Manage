@@ -34,7 +34,7 @@ import com.google.firebase.storage.UploadTask;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class User_profile extends AppCompatActivity {
-    TextView uname,umail;
+    TextView uname,umail,precpt;
     CircleImageView pro;
     DatabaseReference reference;
     StorageReference upimref;
@@ -59,15 +59,74 @@ public class User_profile extends AppCompatActivity {
         umail=findViewById(R.id.uemail);
         pro=findViewById(R.id.profile_image);
         signout=findViewById(R.id.signout);
+        precpt=findViewById(R.id.prec);
        // mode=findViewById(R.id.mode);
-        user=FirebaseAuth.getInstance().getCurrentUser();
-        uid=user.getUid();
+        try {
+            user=FirebaseAuth.getInstance().getCurrentUser();
+            uid=user.getUid();
+        }catch (Exception e){
+            finish();
+
+
+        }
+
+
+
+
 
         try {
             reference= FirebaseDatabase.getInstance().getReference("USERS").child(uid);
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    try {
+                        String name=snapshot.child("user_name").getValue().toString();
+                        uname.setText(name);
+                        try {
+                            String pr=snapshot.child("pay_code").getValue().toString();
+                            precpt.setText(pr);
+                        }catch (Exception e){
+                            Toast.makeText(User_profile.this, "Please Contact Admin", Toast.LENGTH_SHORT).show();
+                            auth.signOut();
+                            finish();
+                        }
+
+
+                        String mail=snapshot.child("email").getValue().toString();
+                        umail.setText(mail);
+                        String pro_link=snapshot.child("image_url").getValue().toString();
+                        if (!pro_link.equals("default")){
+                            Glide.with(User_profile.this).load(pro_link).centerCrop().into(pro);
+                        }
+                    }catch (Exception e){
+                        uname.setText("Error");
+                        umail.setText("Error");
+                    }
+
+
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(User_profile.this, "Error Loading Data", Toast.LENGTH_SHORT).show();
+
+                }
+            });
+
+            pro.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent=new Intent(Intent.ACTION_GET_CONTENT);
+                    intent.setType("image/*");
+                    startActivityForResult(intent,IMAGEBACK);
+                }
+            });
         }catch (Exception e){
             Toast.makeText(this, "Check Your Connection", Toast.LENGTH_SHORT).show();
             auth.signOut();
+            finish();
+
 
         }
 
@@ -99,54 +158,23 @@ public class User_profile extends AppCompatActivity {
 
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+
                 finish();
 
-            }
-        });
-
-
-
-
-
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                try {
-                    String name=snapshot.child("user_name").getValue().toString();
-                    uname.setText(name);
-                    String mail=snapshot.child("email").getValue().toString();
-                    umail.setText(mail);
-                    String pro_link=snapshot.child("image_url").getValue().toString();
-                    if (!pro_link.equals("default")){
-                        Glide.with(User_profile.this).load(pro_link).centerCrop().into(pro);
-                    }
-                }catch (Exception e){
-                    uname.setText("Error");
-                    umail.setText("Error");
-                }
-
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(User_profile.this, "Error Loading Data", Toast.LENGTH_SHORT).show();
 
             }
         });
 
-        pro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/*");
-                startActivityForResult(intent,IMAGEBACK);
-            }
-        });
+
+
+
+
+
+
 
 
     }
+
 
 
 

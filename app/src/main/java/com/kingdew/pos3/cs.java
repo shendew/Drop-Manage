@@ -17,7 +17,7 @@ public class cs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cs);
 
-        reference= FirebaseDatabase.getInstance().getReference("HOW");
+
                 
     }
 }

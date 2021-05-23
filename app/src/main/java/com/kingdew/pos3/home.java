@@ -39,6 +39,7 @@ public class  home extends AppCompatActivity {
     Context context=this;
     ElasticImageView ap1,ao1,cs1,ab1,search,ima;
     FirebaseUser user;
+    String uid;
     DatabaseReference databaseReference;
 
 
@@ -54,6 +55,9 @@ public class  home extends AppCompatActivity {
         }
 
 
+    }
+    public void fin(){
+        finish();
     }
 
     @Override
@@ -75,16 +79,22 @@ public class  home extends AppCompatActivity {
         ab1=findViewById(R.id.ab1);
         ima=findViewById(R.id.imageView);
 
-        user=FirebaseAuth.getInstance().getCurrentUser();
 
-        if (user == null){
+
+
+
+        try {
+            user=FirebaseAuth.getInstance().getCurrentUser();
+             uid=user.getUid();
+        }catch (Exception e){
             Intent intent=new Intent(home.this,login.class);
             startActivity(intent);
             finish();
         }
-        String uid=user.getUid();
+
         try {
             databaseReference= FirebaseDatabase.getInstance().getReference("USERS").child(uid);
+
 
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -92,6 +102,14 @@ public class  home extends AppCompatActivity {
                     String name=snapshot.child("user_name").getValue().toString();
 
                     welcome.setText("Welcome "+name+" ");
+
+                    try {
+                        String payno=snapshot.child("pay_code").getValue().toString();
+                    }catch (Exception e){
+                        Toast.makeText(context, "Please Contact Admin", Toast.LENGTH_SHORT).show();
+                        auth.signOut();
+                        finish();
+                    }
 
                 }
 
@@ -127,6 +145,8 @@ public class  home extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent=new Intent(home.this,User_profile.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(intent);
 
             }

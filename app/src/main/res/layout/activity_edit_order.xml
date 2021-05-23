@@ -82,12 +82,14 @@
         android:hint="Completed Date"
         />
 
-    <Button
+
+
+    <com.skydoves.elasticviews.ElasticImageView
         android:id="@+id/button"
         android:layout_width="match_parent"
-        android:background="@drawable/button2"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="Update Order" />
+        android:layout_height="75dp"
+        android:padding="5dp"
+        android:src="@drawable/button_updateorder" />
+
 
 </LinearLayout>

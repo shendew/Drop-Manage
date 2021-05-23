@@ -13,9 +13,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.skydoves.elasticviews.ElasticImageView;
+import com.skydoves.elasticviews.ElasticView;
+
 public class edit_order extends AppCompatActivity {
     EditText orderID,orderTitle,contactDetails,trackingNumber,shippedDate,completedDate;
-    Button addOr;
+    ElasticImageView addOr;
     String sorderID,sorderTitle,scontactDetails,strackingNumber,sshippedDate,scompletedDate;
     DbHandler dbHandler;
     Context context=this;

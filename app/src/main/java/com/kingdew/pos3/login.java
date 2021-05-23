@@ -29,10 +29,11 @@ import io.paperdb.Paper;
 public class login extends AppCompatActivity {
 
     ElasticImageView btn_login;
-    TextView createacc,rest;
+    TextView createacc,rest,contc;
     EditText lgn_email,lgn_password;
     ProgressBar load;
     CheckBox cb;
+    String mail;
     FirebaseAuth auth;
 
 
@@ -52,15 +53,30 @@ public class login extends AppCompatActivity {
         cb=findViewById(R.id.checkBox);
         createacc=findViewById(R.id.create_acc);
         Paper.init(this);
+        contc=findViewById(R.id.contact);
         auth=FirebaseAuth.getInstance();
         load=findViewById(R.id.progressBar2);
         load.setVisibility(View.INVISIBLE);
         rest=findViewById(R.id.reset);
 
 
+        contc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(login.this,abount.class);
+                startActivity(intent);
+            }
+        });
+
+
         rest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent=new Intent(login.this,resetpass.class);
+                startActivity(intent);
+                /*
+                FirebaseAuth authe=FirebaseAuth.getInstance();
+                Toast.makeText(login.this, "Clicked", Toast.LENGTH_SHORT).show();
                 EditText resetmail=new EditText(view.getContext());
                 AlertDialog.Builder passrestdialog=new AlertDialog.Builder(view.getContext());
                 passrestdialog.setTitle("Password Reset");
@@ -70,16 +86,22 @@ public class login extends AppCompatActivity {
                 passrestdialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        String mail=resetmail.getText().toString();
-                        auth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        try {
+                            mail=resetmail.getText().toString();
+                        }catch (Exception e){
+                            resetmail.setError("Enter Email");
+                        }
+
+                        authe.sendPasswordResetEmail(mail).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
-                            public void onSuccess(Void aVoid) {
-                                Toast.makeText(login.this, "Password reset link sent", Toast.LENGTH_SHORT).show();
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(login.this, "Password reset link send failed", Toast.LENGTH_SHORT).show();
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()){
+                                    Toast.makeText(login.this, "Success", Toast.LENGTH_SHORT).show();
+                                }else {
+                                    Toast.makeText(login.this, "Failed", Toast.LENGTH_SHORT).show();
+
+                                }
+
                             }
                         });
 
@@ -89,9 +111,12 @@ public class login extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         //do nothing
+
                     }
                 });
+                passrestdialog.create().show();
 
+                */
             }
         });
 

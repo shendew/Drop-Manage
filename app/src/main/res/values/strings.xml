@@ -1,8 +1,13 @@
 <resources>
     <string name="app_name">Drop Manage</string>
-    <string name="how_to_use">
+    <string name="how_to_use">How To Use</string>
+    <string name="add_product">Add Product</string>
+    <string name="you_can_add_products_using_all_products_page">You can add products using all products page.</string>
+    <string name="all_products_add_new_product"><![CDATA[all products > add new product]]></string>
+    <string name="note_product_id_product_title_product_links_are_required">note{ product id ,product title ,product links are required.}</string>
 
-        <p> <b>About this app,</b> </p>
+<string name="mm">
+    <p> <b>About this app,</b> </p>
 <p>This app developed for all sellers and dropshippers.You can manage your selling products and selling orders.Order process,shipped,finished monitor make easer your works.You can update your orders,products.This app using local database. Then we added backup option. When you log to app on another phone using login methods. You can get your database backup. We think your sellings be easy with our app.
 </p>
         <p><b>How To Use,</b></p>
@@ -43,4 +48,17 @@ if not match with database you will see no data message.</p>
 
 
     </string>
+    <string name="enter_email_address">Enter Email Address</string>
+    <string name="about">About</string>
+    <string name="order_id">Order ID</string>
+    <string name="order_title">Order Title</string>
+    <string name="contact_details">Contact Details</string>
+    <string name="tracking_number">Tracking Number</string>
+    <string name="shipped_date">Shipped Date</string>
+    <string name="completed_date">Completed Date</string>
+    <string name="product_id">Product ID</string>
+    <string name="product_title">Product Title</string>
+    <string name="product_link">Product Link</string>
+
+    <string name="loading">Loading</string>
 </resources>

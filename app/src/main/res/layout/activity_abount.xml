@@ -8,13 +8,14 @@
     tools:context=".abount">
 
     <LinearLayout
+        android:id="@+id/linearLayout7"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:orientation="vertical"
+        android:layout_height="150sp"
         android:background="@drawable/home_bar"
         android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="204dp">
+        tools:layout_editor_absoluteX="204sp">
 
         <TextView
             android:id="@+id/textView9"
@@ -22,35 +23,29 @@
             android:layout_height="wrap_content"
             android:gravity="center"
 
+            android:text="About"
             android:textColor="@color/white"
-            android:textSize="25dp"
-            android:text="About" />
+            android:textSize="25sp" />
     </LinearLayout>
-
 
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="150sp"
+        android:layout_height="150sp"
 
-        android:layout_marginTop="200dp"
-
-        android:layout_marginBottom="276dp"
         android:src="@drawable/propc"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="408dp"
+        android:layout_width="408sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="50dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,24 +58,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="100dp"
+            android:layout_marginLeft="20sp"
+            android:layout_marginBottom="50sp"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="10sp">
 
 
             <LinearLayout
                 android:id="@+id/mailcntact"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="20sp"
                 android:gravity="center">
 
                 <com.skydoves.elasticviews.ElasticImageView
 
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_width="25sp"
+                    android:layout_height="25sp"
+                    android:layout_marginRight="20sp"
                     android:src="@drawable/gmail" />
 
                 <TextView
@@ -98,9 +93,9 @@
 
                 <com.skydoves.elasticviews.ElasticImageView
 
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_width="25sp"
+                    android:layout_height="25sp"
+                    android:layout_marginRight="20sp"
                     android:src="@drawable/facebook" />
 
                 <TextView
@@ -116,8 +111,8 @@
         <com.skydoves.elasticviews.ElasticImageView
             android:id="@+id/button3"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:padding="5dp"
+            android:layout_height="75sp"
+            android:padding="5sp"
             android:src="@drawable/button_terms" />
 
 
@@ -127,12 +122,12 @@
         android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:gravity="center"
         android:text="Developer  : Shehara Dewanagala"
         android:textColor="@color/black"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/contactnum"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_image"
@@ -142,11 +137,11 @@
         android:id="@+id/contactnum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="Loading.. "
-        android:textStyle="bold"
         android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".add_product">
+
+
+    <EditText
+        android:layout_marginTop="50sp"
+        android:id="@+id/proID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:maxLines="1"
+        android:layout_marginRight="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginBottom="20sp"
+        android:inputType="textPersonName"
+        android:hint="@string/product_id" />
+
+    <EditText
+        android:id="@+id/proTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:maxLines="1"
+        android:layout_marginRight="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginBottom="20sp"
+        android:inputType="textPersonName"
+        android:hint="@string/product_title" />
+
+    <EditText
+        android:id="@+id/prolink"
+        android:layout_width="match_parent"
+        android:layout_height="150sp"
+        android:ems="10"
+        android:layout_marginRight="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginBottom="20sp"
+        android:inputType="textPersonName"
+
+        android:hint="@string/product_link" />
+
+    <com.skydoves.elasticviews.ElasticImageView
+        android:id="@+id/buttonp"
+        android:layout_width="match_parent"
+        android:layout_height="75sp"
+        android:padding="5sp"
+        android:src="@drawable/button_add_pro" />
+
+
+
+</LinearLayout>

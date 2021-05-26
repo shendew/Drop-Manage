@@ -7,34 +7,58 @@
 
     tools:context=".ao">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150sp"
+        android:background="@drawable/home_bar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="182sp">
 
-    <TextView
-        android:id="@+id/count1"
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/home_hd"
-        android:gravity="center"
 
-        android:paddingTop="10dp"
-        android:text="@string/loading"
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Profile"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/count1"
+            android:layout_width="fill_parent"
+            android:layout_height="50sp"
+
+            android:gravity="center"
+            android:paddingTop="10sp"
+
+            android:text="@string/loading"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="150sp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="10dp"
+        android:padding="10sp"
         android:weightSum="2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
@@ -44,9 +68,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:dividerHeight="1dp"
+            android:dividerHeight="1sp"
 
-            android:padding="10dp">
+            android:padding="10sp">
 
 
         </ListView>
@@ -56,16 +80,13 @@
     <com.skydoves.elasticviews.ElasticImageView
         android:id="@+id/act_ad_order"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:padding="5dp"
+        android:layout_height="75sp"
+        android:layout_marginBottom="10sp"
+        android:padding="5sp"
         android:src="@drawable/button_add_new_order"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         tools:ignore="MissingConstraints"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
+        tools:layout_editor_absoluteX="10sp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

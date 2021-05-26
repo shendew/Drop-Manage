@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10sp"
+    tools:context=".add_order">
+
+
+    <EditText
+        android:id="@+id/orderID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="50sp"
+        android:layout_marginRight="10sp"
+        android:layout_marginBottom="10sp"
+        android:ems="10"
+        android:hint="@string/order_id"
+        android:inputType="textPersonName"
+        android:maxLines="1" />
+
+    <EditText
+        android:id="@+id/orderTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_marginBottom="10sp"
+        android:ems="10"
+        android:hint="@string/order_title"
+        android:inputType="textPersonName"
+        android:maxLines="1" />
+
+    <EditText
+        android:id="@+id/contactDetails"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_marginBottom="10sp"
+        android:ems="10"
+        android:hint="@string/contact_details"
+
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/trackingNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_marginBottom="10sp"
+        android:ems="10"
+        android:hint="@string/tracking_number"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/shippedDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_marginBottom="10sp"
+        android:ems="10"
+        android:hint="@string/shipped_date"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/completedDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_marginBottom="10sp"
+        android:ems="10"
+        android:hint="@string/completed_date"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        tools:ignore="TextFields" />
+
+
+    <com.skydoves.elasticviews.ElasticImageView
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="75sp"
+        android:padding="5sp"
+        android:src="@drawable/button_place_order" />
+
+
+</LinearLayout>

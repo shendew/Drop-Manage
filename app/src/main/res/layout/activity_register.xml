@@ -8,22 +8,23 @@
     tools:context=".register">
 
     <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:orientation="vertical"
+        android:layout_height="150sp"
         android:background="@drawable/home_bar"
         android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="204dp">
+        tools:layout_editor_absoluteX="204sp">
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:text="Register"
             android:textColor="@color/white"
-            android:textSize="25dp"
-            android:text="Register" />
+            android:textSize="25sp" />
     </LinearLayout>
 
     <ProgressBar
@@ -39,20 +40,21 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
         tools:ignore="MissingConstraints">
 
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/username_text_input_layout"
-            android:layout_width="400dp"
+            android:layout_width="wrap_content"
 
             android:layout_height="wrap_content">
 
@@ -63,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="10sp"
                 android:ems="10"
                 android:hint="User name"
                 android:inputType="textPersonName" />
@@ -74,7 +76,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email_text_input_layout"
-            android:layout_width="400dp"
+            android:layout_width="wrap_content"
 
             android:layout_height="wrap_content">
 
@@ -85,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="10sp"
                 android:ems="10"
                 android:hint="Email"
                 android:inputType="textPersonName" />
@@ -94,10 +96,9 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/pay_text_input_layout"
-            android:layout_width="400dp"
+            android:layout_width="wrap_content"
 
             android:layout_height="wrap_content">
 
@@ -108,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="10sp"
                 android:ems="10"
                 android:hint="Payment"
                 android:inputType="textPersonName" />
@@ -117,12 +118,11 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password_text_input_layout"
-            android:layout_width="400dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="20sp"
             app:passwordToggleEnabled="true">
 
             <EditText
@@ -139,9 +139,9 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password_text_input_layout2"
-            android:layout_width="400dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="20sp"
             app:passwordToggleEnabled="true">
 
             <EditText
@@ -158,16 +158,15 @@
 
         <com.skydoves.elasticviews.ElasticImageView
             android:id="@+id/sigin_btn"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="75sp"
+            android:layout_marginBottom="10sp"
+            android:padding="5sp"
             android:src="@drawable/button_register"
-            tools:ignore="MissingConstraints"
-            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
 
 
     </LinearLayout>

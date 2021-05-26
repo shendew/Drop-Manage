@@ -114,14 +114,11 @@ public class User_profile extends AppCompatActivity {
                 }
             });
 
-            pro.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent=new Intent(Intent.ACTION_GET_CONTENT);
-                    intent.setType("image/*");
-                    startActivityForResult(intent,IMAGEBACK);
-                }
-            });
+
+
+
+
+
         }catch (Exception e){
             Toast.makeText(this, "Check Your Connection", Toast.LENGTH_SHORT).show();
             auth.signOut();
@@ -165,25 +162,31 @@ public class User_profile extends AppCompatActivity {
             }
         });
 
+        pro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
 
+                try{
+                    startActivityForResult(intent,IMAGEBACK);
+                }catch (Exception e){
+                    Toast.makeText(User_profile.this, "error", Toast.LENGTH_SHORT).show();
+                }
 
-
-
-
-
-
+            }
+        });
 
     }
 
-
-
-
-    @Override
+    @Deprecated
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == IMAGEBACK){
             if (resultCode == RESULT_OK){
+                assert data != null;
                 Uri imagedata=data.getData();
+                assert imagedata != null;
                 final StorageReference imagename=upimref.child(uid+imagedata.getLastPathSegment());
 
 

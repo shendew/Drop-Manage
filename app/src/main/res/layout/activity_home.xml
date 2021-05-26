@@ -15,31 +15,31 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="150sp"
 
         android:background="@drawable/home_bar"
         android:gravity="right"
         android:orientation="vertical"
-        android:padding="12dp">
+        android:padding="12sp">
 
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="50sp"
             android:gravity="right"
             android:orientation="horizontal">
 
             <com.skydoves.elasticviews.ElasticImageView
                 android:id="@+id/searchview"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:padding="5dp"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:padding="5sp"
                 android:src="@drawable/ic_baseline_search_24" />
 
             <com.skydoves.elasticviews.ElasticImageView
                 android:id="@+id/imageView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
                 android:src="@drawable/ic_outline_supervisor_account_24" />
 
 
@@ -57,7 +57,7 @@
             android:id="@+id/home_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="20sp"
             android:text="Loading..."
             android:textColor="#fafafa"
             android:textSize="25sp" />
@@ -67,8 +67,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="4"
         android:gravity="center"
-        android:layout_weight="5"
         android:orientation="vertical"
 
         >
@@ -77,8 +77,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:gravity="center"
+            android:orientation="vertical"
 
 
             >
@@ -86,28 +86,26 @@
             <!--   <androidx.cardview.widget.CardView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_margin="20dp"
+                   android:layout_margin="20sp"
 
-                   app:cardCornerRadius="8dp"
-                   app:cardElevation="2dp">-->
-
-
+                   app:cardCornerRadius="8sp"
+                   app:cardElevation="2sp">-->
 
 
-                        <com.skydoves.elasticviews.ElasticImageView
+            <com.skydoves.elasticviews.ElasticImageView
 
-                           android:id="@+id/ap1"
-                           android:layout_width="150dp"
-                           android:layout_height="150dp"
-                           android:clickable="true"
-                           android:src="@drawable/pro"
-                            android:layout_margin="10dp"
+                android:id="@+id/ap1"
+                android:layout_width="150sp"
+                android:layout_height="150sp"
+                android:layout_margin="10sp"
+                android:clickable="true"
+                android:src="@drawable/pro"
 
-                           />
+                />
 
-                       <!--  <ImageView
-                             android:layout_width="150dp"
-                             android:layout_height="150dp"
+            <!--  <ImageView
+                             android:layout_width="150sp"
+                             android:layout_height="150sp"
                              android:src="@drawable/pro" /> -->
 
 
@@ -118,37 +116,36 @@
                           <androidx.cardview.widget.CardView
                               android:layout_width="wrap_content"
                               android:layout_height="wrap_content"
-                              android:layout_margin="10dp"
+                              android:layout_margin="10sp"
 
 
-                              app:cardCornerRadius="8dp"
-                              app:cardElevation="2dp">-->
+                              app:cardCornerRadius="8sp"
+                              app:cardElevation="2sp">-->
 
 
+            <com.skydoves.elasticviews.ElasticImageView
 
-                                  <com.skydoves.elasticviews.ElasticImageView
+                android:id="@+id/ao1"
+                android:layout_width="150sp"
+                android:layout_height="150sp"
+                android:layout_margin="10sp"
+                android:clickable="true"
+                android:src="@drawable/order"
 
-                                      android:id="@+id/ao1"
-                                      android:layout_width="150dp"
-                                      android:layout_height="150dp"
-                                      android:clickable="true"
-                                      android:layout_margin="10dp"
-                                      android:src="@drawable/order"
+                />
 
-                                      />
-
-                                  <!--   <ImageView
-                                        android:layout_width="150dp"
-                                        android:layout_height="150dp"
+            <!--   <ImageView
+                                        android:layout_width="150sp"
+                                        android:layout_height="150sp"
                                         android:src="@drawable/order" />
 
 
 
                 </androidx.cardview.widget.CardView>-->
-            </LinearLayout>
+        </LinearLayout>
 
 
-            <!--Secound Row-->
+        <!--Secound Row-->
 
 
         <LinearLayout
@@ -163,27 +160,27 @@
             <!--  <androidx.cardview.widget.CardView
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:layout_margin="20dp"
-                  app:cardElevation="2dp"
-                  app:cardCornerRadius="8dp"
+                  android:layout_margin="20sp"
+                  app:cardElevation="2sp"
+                  app:cardCornerRadius="8sp"
 
 
                   >-->
 
-                     <com.skydoves.elasticviews.ElasticImageView
+            <com.skydoves.elasticviews.ElasticImageView
 
-                          android:id="@+id/cs1"
-                          android:layout_width="150dp"
-                          android:layout_height="150dp"
-                          android:clickable="true"
-                          android:src="@drawable/how"
-                         android:layout_margin="10dp"
+                android:id="@+id/cs1"
+                android:layout_width="150sp"
+                android:layout_height="150sp"
+                android:layout_margin="10sp"
+                android:clickable="true"
+                android:src="@drawable/how"
 
-                          />
+                />
 
-                      <!--  <ImageView
-                          android:layout_width="150dp"
-                          android:layout_height="150dp"
+            <!--  <ImageView
+                          android:layout_width="150sp"
+                          android:layout_height="150sp"
                           android:src="@drawable/how"
                           />
 
@@ -193,27 +190,27 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                app:cardElevation="2dp"
-                app:cardCornerRadius="8dp"
+                android:layout_margin="10sp"
+                app:cardElevation="2sp"
+                app:cardCornerRadius="8sp"
 
 
                 >-->
 
 
-                    <com.skydoves.elasticviews.ElasticImageView
+            <com.skydoves.elasticviews.ElasticImageView
 
-                        android:id="@+id/ab1"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:clickable="true"
-                        android:src="@drawable/about"
-                        android:layout_margin="10dp"
+                android:id="@+id/ab1"
+                android:layout_width="150sp"
+                android:layout_height="150sp"
+                android:layout_margin="10sp"
+                android:clickable="true"
+                android:src="@drawable/about"
 
-                        />
-                    <!--  <ImageView
-                          android:layout_width="150dp"
-                          android:layout_height="150dp"
+                />
+            <!--  <ImageView
+                          android:layout_width="150sp"
+                          android:layout_height="150sp"
 
                           android:src="@drawable/about"
                           />
@@ -222,10 +219,10 @@
 
               </androidx.cardview.widget.CardView>-->
 
-          </LinearLayout>
+        </LinearLayout>
 
 
-      </LinearLayout>
+    </LinearLayout>
 
 
 

@@ -13,18 +13,18 @@
         android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
         tools:ignore="MissingConstraints">
 
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/username_text_input_layout"
-            android:layout_width="400dp"
+            android:layout_width="match_parent"
 
             android:layout_height="wrap_content">
 
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="10sp"
                 android:ems="10"
                 android:hint="Email"
                 android:inputType="textPersonName" />
@@ -46,9 +46,9 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password_text_input_layout"
-            android:layout_width="400dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="20sp"
             app:passwordToggleEnabled="true">
 
             <EditText
@@ -64,7 +64,7 @@
 
             <CheckBox
                 android:id="@+id/checkBox"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Remember Me" />
 
@@ -74,41 +74,37 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:gravity="right"
-                android:paddingTop="10dp"
-                android:visibility="invisible"
-                android:paddingBottom="10dp"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
                 android:text="Forgot password"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="invisible" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.skydoves.elasticviews.ElasticImageView
             android:id="@+id/lgn_btn"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:padding="5dp"
+            android:layout_height="75sp"
+            android:layout_marginBottom="10sp"
+            android:padding="5sp"
             android:src="@drawable/button_login"
-            tools:ignore="MissingConstraints"
 
-            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-
-
-
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/create_acc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="20sp"
+            android:paddingLeft="10sp"
             android:text="Create a new account"
             android:textColor="@color/black"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
 
@@ -126,30 +122,31 @@
         app:layout_constraintVertical_bias="0.47000003" />
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:orientation="vertical"
+        android:layout_height="150sp"
         android:background="@drawable/home_bar"
         android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="204dp">
+        tools:layout_editor_absoluteX="204sp">
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:text="Login"
             android:textColor="@color/white"
-            android:textSize="25dp"
-            android:text="Login" />
+            android:textSize="25sp" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/contact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10sp"
+        android:layout_marginBottom="10sp"
 
         android:text="Contact Developer"
         android:textColor="@color/red"

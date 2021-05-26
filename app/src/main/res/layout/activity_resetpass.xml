@@ -16,9 +16,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/enter_email_address"
-        android:layout_marginBottom="30dp"
-        tools:layout_editor_absoluteX="204dp"
-        tools:layout_editor_absoluteY="229dp" />
+        android:layout_marginBottom="30sp"
+        tools:layout_editor_absoluteX="204sp"
+        tools:layout_editor_absoluteY="229sp" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -10,7 +10,7 @@
         android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="150sp"
         android:text="@string/how_to_use"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,19 +19,19 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="150sp"
         android:background="@drawable/home_bar"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
         android:gravity="center"
-        tools:layout_editor_absoluteX="203dp">
+        tools:layout_editor_absoluteX="203sp">
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:textColor="@color/white"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:gravity="center"
             android:layout_height="wrap_content"
             android:text="@string/how_to_use" />
@@ -40,33 +40,33 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="100sp"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingTop="50dp"
-            tools:layout_editor_absoluteX="228dp"
-            tools:layout_editor_absoluteY="831dp">
+            android:paddingTop="50sp"
+            tools:layout_editor_absoluteX="228sp"
+            tools:layout_editor_absoluteY="831sp">
 
 <!-- product -->
             <LinearLayout
-                android:id="@+id/addproduct"
+                android:id="@+id/adsproduct"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="10sp"
                 android:orientation="vertical"
-                android:padding="5dp">
+                android:padding="5sp">
 
                 <TextView
                     android:id="@+id/textView6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="10sp"
                     android:text="@string/add_product"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -74,13 +74,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/you_can_add_products_using_all_products_page"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textView11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="10sp"
                     android:text="@string/all_products_add_new_product"
                     android:textStyle="italic" />
 
@@ -93,8 +93,8 @@
 
                 <ImageView
                     android:id="@+id/imageView6"
-                    android:layout_width="300dp"
-                    android:layout_height="500dp"
+                    android:layout_width="300sp"
+                    android:layout_height="500sp"
                     android:layout_gravity="center"
 
                     android:src="@drawable/add_product" />
@@ -106,17 +106,17 @@
                 android:id="@+id/deleteproduct"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="10sp"
                 android:orientation="vertical"
-                android:padding="5dp">
+                android:padding="5sp">
 
                 <TextView
                     android:id="@+id/textView13"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="10sp"
                     android:text="Delete Product"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -124,12 +124,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="You can delete a product simply tap the product and choose delete in popup window."
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <ImageView
                     android:id="@+id/imageView7"
-                    android:layout_width="300dp"
-                    android:layout_height="500dp"
+                    android:layout_width="300sp"
+                    android:layout_height="500sp"
                     android:layout_gravity="center"
                     android:src="@drawable/delete_product" />
             </LinearLayout>
@@ -138,17 +138,17 @@
                 android:id="@+id/updateproduct"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="10sp"
                 android:orientation="vertical"
-                android:padding="5dp">
+                android:padding="5sp">
 
                 <TextView
                     android:id="@+id/textView15"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="10sp"
                     android:text="Update Product"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -156,12 +156,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="You can update a product simply tap the product and choose edit in popup window.and you can edit product.\nAfter edit your product choose update product"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <ImageView
                     android:id="@+id/imageView8"
-                    android:layout_width="300dp"
-                    android:layout_height="500dp"
+                    android:layout_width="300sp"
+                    android:layout_height="500sp"
                     android:layout_gravity="center"
                     android:src="@drawable/delete_product" />
             </LinearLayout>
@@ -169,8 +169,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:padding="5dp"
+                android:layout_margin="10sp"
+                android:padding="5sp"
                 android:orientation="vertical">
 
                 <TextView
@@ -178,14 +178,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     android:text="Add Order" />
 
                 <TextView
                     android:id="@+id/textView18"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     android:text="You can add new order using all orders page." />
 
                 <TextView
@@ -204,8 +204,8 @@
 
                 <ImageView
                     android:id="@+id/imageView9"
-                    android:layout_width="300dp"
-                    android:layout_height="500dp"
+                    android:layout_width="300sp"
+                    android:layout_height="500sp"
                     android:layout_gravity="center"
                     app:srcCompat="@drawable/add_product" />
             </LinearLayout>
@@ -216,17 +216,17 @@
                 android:id="@+id/deleteorder"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="10sp"
                 android:orientation="vertical"
-                android:padding="5dp">
+                android:padding="5sp">
 
                 <TextView
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="10sp"
                     android:text="Delete Order"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -235,12 +235,12 @@
                     android:layout_height="wrap_content"
                     android:text="You can delete a order simply tap the order and choose delete in popup window.
 "
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <ImageView
 
-                    android:layout_width="300dp"
-                    android:layout_height="500dp"
+                    android:layout_width="300sp"
+                    android:layout_height="500sp"
                     android:layout_gravity="center"
                     android:src="@drawable/delete_product" />
             </LinearLayout>
@@ -250,17 +250,17 @@
                 android:id="@+id/updateorder"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="10sp"
                 android:orientation="vertical"
-                android:padding="5dp">
+                android:padding="5sp">
 
                 <TextView
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="10sp"
                     android:text="Update Order"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -268,12 +268,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="You can update a order simply tap the order and choose edit in popup window.and you can edit order.\nafter edit your order choose update order."
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <ImageView
 
-                    android:layout_width="300dp"
-                    android:layout_height="500dp"
+                    android:layout_width="300sp"
+                    android:layout_height="500sp"
                     android:layout_gravity="center"
                     android:src="@drawable/delete_product" />
             </LinearLayout>

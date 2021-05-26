@@ -12,15 +12,15 @@
 
 
     <EditText
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="50sp"
         android:id="@+id/proID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:maxLines="1"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginRight="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginBottom="20sp"
         android:inputType="textPersonName"
         android:hint="Order ID" />
 
@@ -30,20 +30,20 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:maxLines="1"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginRight="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginBottom="20sp"
         android:inputType="textPersonName"
         android:hint="Order Title" />
 
     <EditText
         android:id="@+id/prolink"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="150sp"
         android:ems="10"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginRight="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginBottom="20sp"
         android:inputType="textPersonName"
 
         android:hint="Contact Details" />
@@ -51,8 +51,8 @@
     <com.skydoves.elasticviews.ElasticImageView
         android:id="@+id/buttonp"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:padding="5dp"
+        android:layout_height="75sp"
+        android:padding="5sp"
         android:src="@drawable/button_updatepro" />
 
 

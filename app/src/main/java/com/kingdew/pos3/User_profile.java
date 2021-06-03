@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.app.Instrumentation;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -61,10 +62,18 @@ public class User_profile extends AppCompatActivity {
         signout=findViewById(R.id.signout);
         precpt=findViewById(R.id.prec);
        // mode=findViewById(R.id.mode);
+        ProgressDialog progress=new ProgressDialog(User_profile.this);
+        progress.startDialog();
         try {
             user=FirebaseAuth.getInstance().getCurrentUser();
             uid=user.getUid();
         }catch (Exception e){
+            auth.signOut();
+            Toast.makeText(this, "Sigining out,Please wait", Toast.LENGTH_SHORT).show();
+            Intent intent=getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName());
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
             finish();
 
 
@@ -79,6 +88,7 @@ public class User_profile extends AppCompatActivity {
             reference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    progress.dismissDialog();
                     try {
                         String name=snapshot.child("user_name").getValue().toString();
                         uname.setText(name);
@@ -88,6 +98,8 @@ public class User_profile extends AppCompatActivity {
                         }catch (Exception e){
                             Toast.makeText(User_profile.this, "Please Contact Admin", Toast.LENGTH_SHORT).show();
                             auth.signOut();
+                            home h=new home();
+                            h.finish();
                             finish();
                         }
 
@@ -122,6 +134,11 @@ public class User_profile extends AppCompatActivity {
         }catch (Exception e){
             Toast.makeText(this, "Check Your Connection", Toast.LENGTH_SHORT).show();
             auth.signOut();
+            Toast.makeText(this, "Sigining out,Please wait", Toast.LENGTH_SHORT).show();
+            Intent intent=getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName());
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
             finish();
 
 
@@ -151,11 +168,11 @@ public class User_profile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 auth.signOut();
-                Intent intent=new Intent(User_profile.this,MainActivity.class);
-
+                Toast.makeText(User_profile.this, "Sigining out,Please wait", Toast.LENGTH_SHORT).show();
+                Intent intent=getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName());
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
-
                 finish();
 
 
@@ -165,20 +182,21 @@ public class User_profile extends AppCompatActivity {
         pro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/*");
 
-                try{
-                    startActivityForResult(intent,IMAGEBACK);
-                }catch (Exception e){
-                    Toast.makeText(User_profile.this, "error", Toast.LENGTH_SHORT).show();
-                }
+                //Intent intent=new Intent(Intent.ACTION_GET_CONTENT);
+                //intent.setType("image/*");
+
+
+                   // startActivityForResult(intent,IMAGEBACK);
+
+                   // Toast.makeText(User_profile.this, "error", Toast.LENGTH_SHORT).show();
+
 
             }
         });
 
     }
-
+/*
     @Deprecated
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -220,4 +238,6 @@ public class User_profile extends AppCompatActivity {
         }
 
     }
+    
+ */
 }

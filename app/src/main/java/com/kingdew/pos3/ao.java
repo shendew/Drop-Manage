@@ -46,6 +46,7 @@ public class ao extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ao);
+
         count=findViewById(R.id.count1);
         addorder=findViewById(R.id.act_ad_order);
         listViewl=findViewById(R.id.listview);
@@ -60,16 +61,13 @@ public class ao extends AppCompatActivity {
             Toast.makeText(context, "Error call", Toast.LENGTH_SHORT).show();
         }
 
-        count.setText("All Orders "+counter);
+       count.setText("All Orders "+counter);
 
         orders=dbHandler.orderROWS();
-        orderAdaper adaper=new orderAdaper(context,R.layout.all_od_row,orders);
-        listViewl.setAdapter(adaper);
+       orderAdaper adaper=new orderAdaper(context,R.layout.all_od_row,orders);
+      listViewl.setAdapter(adaper);
 
-
-
-
-        listViewl.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+   listViewl.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
@@ -102,9 +100,6 @@ public class ao extends AppCompatActivity {
         });
 
 
-
-
-
         addorder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,21 +111,4 @@ public class ao extends AppCompatActivity {
         });
 
     }
-
-    /*private void finishbt() {
-        LayoutInflater inflater=LayoutInflater.from(context);
-        View rw=inflater.inflate(R.layout.all_od_row,null);
-        ImageView fini=rw.findViewById(R.id.imageView2);
-        ImageView ship=rw.findViewById(R.id.imageView3);
-        ImageView notship=rw.findViewById(R.id.imageView4);
-
-        ship.setVisibility(View.INVISIBLE);
-        notship.setVisibility(View.INVISIBLE);
-        fini.setVisibility(View.VISIBLE);
-        finish();
-        startActivity(new Intent(context,ao.class));
-    }*/
-
-
 }
-

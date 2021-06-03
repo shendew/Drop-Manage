@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.skydoves.elasticviews.ElasticImageView;
 
@@ -28,6 +29,7 @@ public class ap extends AppCompatActivity {
     PRODUCTS products;
     int counter;
     Context context;
+    DbHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +40,21 @@ public class ap extends AppCompatActivity {
         addpro=findViewById(R.id.adpro);
         count=findViewById(R.id.procount);
 
+
         context=this;
+        try {
+            dbHandler=new DbHandler(this);
+            int countpro=dbHandler.countpro();
+            count.setText("All Products "+countpro);
 
-        DbHandler dbHandler=new DbHandler(this);
-        int countpro=dbHandler.countpro();
-        count.setText("All Products "+countpro);
+
+            pro=dbHandler.productRows();
+        }catch (Exception e){
+            Toast.makeText(context, "error", Toast.LENGTH_SHORT).show();
+        }
 
 
-        pro=dbHandler.productRows();
+
         proAdapter prad=new proAdapter(context,R.layout.all_pro_row,pro);
 
         listViewl.setAdapter(prad);
@@ -60,6 +69,8 @@ public class ap extends AppCompatActivity {
 
             }
         });
+
+
 
         listViewl.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

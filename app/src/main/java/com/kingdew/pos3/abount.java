@@ -41,7 +41,8 @@ public class abount extends AppCompatActivity {
         mailcontact=findViewById(R.id.mailcntact);
         fb=findViewById(R.id.facebok);
         contactnum1=findViewById(R.id.contactnum);
-
+        ProgressDialog progressDialog=new ProgressDialog(this);
+        progressDialog.startDialog();
 
         databaseReference=FirebaseDatabase.getInstance().getReference("CONTACTINFO");
 
@@ -53,6 +54,7 @@ public class abount extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                progressDialog.dismissDialog();
                 contactnum=snapshot.child("contact_number").getValue().toString();
                  fbpage=snapshot.child("fb").getValue().toString();
                  mail=snapshot.child("mail").getValue().toString();

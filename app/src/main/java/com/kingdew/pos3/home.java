@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -173,8 +174,14 @@ public class  home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent=new Intent(home.this,ap.class);
-                startActivity(intent);
+
+                try {
+                    Intent intent=new Intent(context,ap.class);
+                    startActivity(intent);
+
+                }catch (Exception e){
+                    Toast.makeText(context, ""+e, Toast.LENGTH_SHORT).show();
+                }
 
             }
         });

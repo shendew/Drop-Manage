@@ -8,7 +8,7 @@ android {
     //buildToolsVersion "30.0.3"
     buildToolsVersion "30.0.3"
     defaultConfig {
-        applicationId 'com.kingdew.pos3'
+        applicationId "com.kingdew.pos3"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1

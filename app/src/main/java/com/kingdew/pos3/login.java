@@ -29,7 +29,7 @@ import io.paperdb.Paper;
 public class login extends AppCompatActivity {
 
     ElasticImageView btn_login;
-    TextView createacc,rest,contc;
+    TextView contc;
     EditText lgn_email,lgn_password;
     ProgressBar load;
     CheckBox cb;
@@ -51,13 +51,13 @@ public class login extends AppCompatActivity {
         lgn_email=findViewById(R.id.lgn_email);
         lgn_password=findViewById(R.id.lgn_pass);
         cb=findViewById(R.id.checkBox);
-        createacc=findViewById(R.id.create_acc);
+
         Paper.init(this);
         contc=findViewById(R.id.contact);
         auth=FirebaseAuth.getInstance();
         load=findViewById(R.id.progressBar2);
         load.setVisibility(View.INVISIBLE);
-        rest=findViewById(R.id.reset);
+
 
 
         contc.setOnClickListener(new View.OnClickListener() {
@@ -69,68 +69,7 @@ public class login extends AppCompatActivity {
         });
 
 
-        rest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(login.this,resetpass.class);
-                startActivity(intent);
-                /*
-                FirebaseAuth authe=FirebaseAuth.getInstance();
-                Toast.makeText(login.this, "Clicked", Toast.LENGTH_SHORT).show();
-                EditText resetmail=new EditText(view.getContext());
-                AlertDialog.Builder passrestdialog=new AlertDialog.Builder(view.getContext());
-                passrestdialog.setTitle("Password Reset");
-                passrestdialog.setMessage("Enter your email to reset your password");
-                passrestdialog.setView(resetmail);
 
-                passrestdialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        try {
-                            mail=resetmail.getText().toString();
-                        }catch (Exception e){
-                            resetmail.setError("Enter Email");
-                        }
-
-                        authe.sendPasswordResetEmail(mail).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()){
-                                    Toast.makeText(login.this, "Success", Toast.LENGTH_SHORT).show();
-                                }else {
-                                    Toast.makeText(login.this, "Failed", Toast.LENGTH_SHORT).show();
-
-                                }
-
-                            }
-                        });
-
-                    }
-                });
-                passrestdialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        //do nothing
-
-                    }
-                });
-                passrestdialog.create().show();
-
-                */
-            }
-        });
-
-
-
-
-
-        createacc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(login.this,register.class);
-                startActivity(intent);
-            }
-        });
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override

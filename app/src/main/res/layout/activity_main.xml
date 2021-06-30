@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
-    android:background="@drawable/group_19"
+    android:background="#FBFBFB"
     tools:context=".MainActivity">
 
     <TextView
@@ -13,10 +13,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="228sp"
+        android:fontFamily="monospace"
         android:text="Welcome"
-        android:textColor="@color/mm"
+        android:textColor="@color/black"
         android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/load2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +30,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginBottom="242sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

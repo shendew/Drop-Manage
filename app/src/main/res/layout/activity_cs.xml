@@ -6,42 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".cs">
 
-    <!--<TextView
-        android:id="@+id/textView6"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="150sp"
-        android:text="@string/how_to_use"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" /> -->
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="150sp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/home_bar"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
         android:gravity="center"
-        tools:layout_editor_absoluteX="203sp">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/g2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/g1"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:gravity="center"
             android:layout_height="wrap_content"
-            android:text="@string/how_to_use" />
+            android:gravity="center"
+            android:text="@string/how_to_use"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
     </LinearLayout>
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="100sp"
-        app:layout_constraintTop_toTopOf="parent">
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/g3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/g2">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,7 +46,7 @@
             tools:layout_editor_absoluteX="228sp"
             tools:layout_editor_absoluteY="831sp">
 
-<!-- product -->
+            <!-- product -->
             <LinearLayout
                 android:id="@+id/adsproduct"
                 android:layout_width="match_parent"
@@ -101,7 +96,7 @@
 
 
             </LinearLayout>
-<!-- -->
+            <!-- -->
             <LinearLayout
                 android:id="@+id/deleteproduct"
                 android:layout_width="match_parent"
@@ -170,37 +165,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10sp"
-                android:padding="5sp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="5sp">
 
                 <TextView
                     android:id="@+id/textView17"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
+                    android:text="Add Order"
                     android:textSize="18sp"
-                    android:text="Add Order" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView18"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:text="You can add new order using all orders page." />
+                    android:text="You can add new order using all orders page."
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textView19"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="italic"
-                    android:text="all orders > add new order " />
+                    android:text="all orders > add new order "
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/textView20"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/red"
-                    android:text="note{order id,order title,order details are required. }" />
+                    android:text="note{order id,order title,order details are required. }"
+                    android:textColor="@color/red" />
 
                 <ImageView
                     android:id="@+id/imageView9"
@@ -209,7 +204,6 @@
                     android:layout_gravity="center"
                     app:srcCompat="@drawable/add_product" />
             </LinearLayout>
-
 
 
             <LinearLayout
@@ -312,6 +306,29 @@
 
     </ScrollView>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.0"
+        app:layout_constraintGuide_begin="20dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

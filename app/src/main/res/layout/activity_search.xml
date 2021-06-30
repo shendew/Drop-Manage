@@ -7,69 +7,101 @@
 
     tools:context=".search">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="150sp"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="10dp"
         android:background="@drawable/home_bar"
-        android:gravity="center_horizontal"
+
+
         android:orientation="horizontal"
-
-        tools:ignore="MissingConstraints">
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10sp"
-        android:layout_marginTop="27sp"
-        android:paddingRight="10sp"
-        app:endIconMode="clear_text"
-        app:layout_constraintEnd_toStartOf="@+id/serchbtn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-
-        <EditText
-            android:id="@+id/searchbox"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/edittextround"
-            android:ems="15"
-            android:hint="Enter Order/Product Number"
-            android:inputType="textPersonName"
-            android:paddingLeft="20sp"
-            android:paddingTop="10sp"
-            android:paddingBottom="10sp" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <ImageButton
-        android:id="@+id/serchbtn"
-        android:layout_width="50sp"
-        android:layout_height="50sp"
-        android:layout_marginTop="36sp"
-
-        android:layout_marginEnd="15sp"
-        android:background="@drawable/imgbutnconer"
+        app:layout_constraintBottom_toTopOf="@+id/g2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_search_24" />
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/g1"
+        tools:ignore="MissingConstraints">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vg3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="1.0"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:gravity="center"
+            app:endIconMode="clear_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/vg2"
+            app:layout_constraintStart_toStartOf="@id/vg1"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints,NotSibling">
+
+            <EditText
+                android:id="@+id/searchbox"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/edittextround"
+                android:ems="15"
+                android:gravity="center"
+                android:hint="Enter Order/Product Number"
+                android:inputType="textPersonName"
+
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/serchbtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:background="@drawable/imgbutnconer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/vg3"
+            app:layout_constraintStart_toEndOf="@+id/vg2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_search_24"
+            tools:ignore="NotSibling" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="543sp"
+        android:id="@+id/constraintLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+
+        android:layout_margin="10sp"
+        android:layout_marginVertical="10sp"
+        android:background="@drawable/searchview"
         android:orientation="vertical"
 
-        android:background="@drawable/searchview"
-        android:layout_margin="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bar"
-        android:layout_marginVertical="10sp"
         android:padding="10sp"
-
-        tools:layout_editor_absoluteX="197sp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bar">
 
         <TextView
             android:id="@+id/textView2"
@@ -97,18 +129,13 @@
             tools:layout_editor_absoluteX="10sp" />
 
 
-
-
         <LinearLayout
             android:id="@+id/view"
-            android:visibility="invisible"
             android:layout_width="match_parent"
-            android:layout_marginTop="35sp"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-
-
-
+            android:layout_marginTop="35sp"
+            android:orientation="vertical"
+            android:visibility="invisible">
 
 
             <LinearLayout
@@ -127,6 +154,7 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
 
@@ -148,8 +176,8 @@
                         android:id="@+id/seimship"
                         android:layout_width="50sp"
                         android:layout_height="50sp"
-                        app:layout_constraintEnd_toEndOf="parent"
                         android:visibility="invisible"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:srcCompat="@drawable/shipped"
                         tools:ignore="MissingConstraints" />
 
@@ -164,9 +192,6 @@
                         tools:ignore="MissingConstraints" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 
             </LinearLayout>
@@ -191,5 +216,32 @@
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="1.0" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

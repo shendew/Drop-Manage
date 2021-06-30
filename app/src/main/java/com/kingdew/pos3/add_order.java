@@ -77,7 +77,7 @@ public class add_order extends AppCompatActivity {
                         dbHandler.addOrder(orders);
                         Toast.makeText(context, "Order Added", Toast.LENGTH_SHORT).show();
                     }catch (Exception e){
-                        Toast.makeText(context, "task error", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Order Adding Faild", Toast.LENGTH_SHORT).show();
                     }
                     Intent intent=new Intent(this,ao.class);
 

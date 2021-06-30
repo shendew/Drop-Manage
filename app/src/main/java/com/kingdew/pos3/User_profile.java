@@ -35,7 +35,7 @@ import com.google.firebase.storage.UploadTask;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class User_profile extends AppCompatActivity {
-    TextView uname,umail,precpt;
+    TextView uname,umail;
     CircleImageView pro;
     DatabaseReference reference;
     StorageReference upimref;
@@ -47,10 +47,13 @@ public class User_profile extends AppCompatActivity {
     private static final int IMAGEBACK=1;
 
 
-
-
-
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent=new Intent(User_profile.this,home.class);
+        startActivity(intent);
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +63,7 @@ public class User_profile extends AppCompatActivity {
         umail=findViewById(R.id.uemail);
         pro=findViewById(R.id.profile_image);
         signout=findViewById(R.id.signout);
-        precpt=findViewById(R.id.prec);
+
        // mode=findViewById(R.id.mode);
         ProgressDialog progress=new ProgressDialog(User_profile.this);
         progress.startDialog();
@@ -92,27 +95,18 @@ public class User_profile extends AppCompatActivity {
                     try {
                         String name=snapshot.child("user_name").getValue().toString();
                         uname.setText(name);
-                        try {
-                            String pr=snapshot.child("pay_code").getValue().toString();
-                            precpt.setText(pr);
-                        }catch (Exception e){
-                            Toast.makeText(User_profile.this, "Please Contact Admin", Toast.LENGTH_SHORT).show();
-                            auth.signOut();
-                            home h=new home();
-                            h.finish();
-                            finish();
-                        }
-
-
                         String mail=snapshot.child("email").getValue().toString();
                         umail.setText(mail);
-                        String pro_link=snapshot.child("image_url").getValue().toString();
-                        if (!pro_link.equals("default")){
-                            Glide.with(User_profile.this).load(pro_link).centerCrop().into(pro);
-                        }
+
+
                     }catch (Exception e){
                         uname.setText("Error");
                         umail.setText("Error");
+                        Toast.makeText(User_profile.this, "Please Contact Admin", Toast.LENGTH_SHORT).show();
+                        auth.signOut();
+                        home h=new home();
+                        h.finish();
+                        finish();
                     }
 
 

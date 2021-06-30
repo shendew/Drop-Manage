@@ -21,6 +21,13 @@ public class add_product extends AppCompatActivity {
     private EditText proid,protitle,prolink;
     private String sproid,sprotitle,sprolink;
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent=new Intent(add_product.this,ap.class);
+        startActivity(intent);
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +64,13 @@ public class add_product extends AppCompatActivity {
             if (!sprotitle.isEmpty()){
                 if (!sprolink.isEmpty()){
                     PRODUCTS products= new PRODUCTS(sproid,sprotitle,sprolink);
-                    dbHandler.addProduct(products);
-                    Toast.makeText(context, "Completed", Toast.LENGTH_SHORT).show();
+                    try {
+                        dbHandler.addProduct(products);
+                        Toast.makeText(context, "Completed", Toast.LENGTH_SHORT).show();
+                    }catch (Exception e){
+                        Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show();
+                    }
+
                     Intent intent=new Intent(context,ap.class);
                     startActivity(intent);
                     finish();

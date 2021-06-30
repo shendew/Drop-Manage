@@ -50,7 +50,7 @@ public class ap extends AppCompatActivity {
 
             pro=dbHandler.productRows();
         }catch (Exception e){
-            Toast.makeText(context, "error", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Call error", Toast.LENGTH_SHORT).show();
         }
 
 
@@ -66,6 +66,7 @@ public class ap extends AppCompatActivity {
 
                 Intent intent=new Intent(context,add_product.class);
                 startActivity(intent);
+                finish();
 
             }
         });

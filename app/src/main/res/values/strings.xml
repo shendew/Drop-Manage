@@ -6,7 +6,7 @@
     <string name="all_products_add_new_product"><![CDATA[all products > add new product]]></string>
     <string name="note_product_id_product_title_product_links_are_required">note{ product id ,product title ,product links are required.}</string>
 
-<string name="mm">
+    <string name="mm">
     <p> <b>About this app,</b> </p>
 <p>This app developed for all sellers and dropshippers.You can manage your selling products and selling orders.Order process,shipped,finished monitor make easer your works.You can update your orders,products.This app using local database. Then we added backup option. When you log to app on another phone using login methods. You can get your database backup. We think your sellings be easy with our app.
 </p>

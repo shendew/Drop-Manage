@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                         builder.setNegativeButton("Update", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://google.lk"));
+                                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse(link));
                                 startActivity(intent);
                             }
                         });
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 }catch (Exception e){
-                    Toast.makeText(MainActivity.this, "Toast error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Database error", Toast.LENGTH_SHORT).show();
                 }
 
                 progressDialog.dismissDialog();
@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Database Error", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -164,4 +164,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
 }

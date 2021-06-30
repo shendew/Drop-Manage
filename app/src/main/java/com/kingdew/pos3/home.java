@@ -42,18 +42,18 @@ import java.util.List;
 import io.paperdb.Paper;
 
 public class  home extends AppCompatActivity {
-    LinearLayout ap,ao,cs,ab;
+
     TextView welcome;
     FirebaseAuth auth=FirebaseAuth.getInstance();
     Context context=this;
     ElasticImageView ap1,ao1,cs1,ab1,search,ima;
     FirebaseUser user;
     String uid;
-    Uri dfile;
+
     DatabaseReference databaseReference,databaseReference1;
     String filename;
-    StorageReference upimref;
-    ProgressDialog progressDialog=new ProgressDialog(home.this);
+
+
 
 
     @Override
@@ -63,8 +63,9 @@ public class  home extends AppCompatActivity {
         String lgdata=Paper.book().read(autolog.autologdata);
 
         if (lgdata.equals("false")){
-            auth.signOut();
             Toast.makeText(context, "Sign Out", Toast.LENGTH_SHORT).show();
+            auth.signOut();
+
         }
     }
     public void fin(){
@@ -103,44 +104,6 @@ public class  home extends AppCompatActivity {
 
         databaseReference1=FirebaseDatabase.getInstance().getReference("USERS").child(uid);
 
-        upimref= FirebaseStorage.getInstance().getReference("BACKUPS");
-        //Toast.makeText(context, "xxxxxxxxxxx", Toast.LENGTH_SHORT).show();
-        databaseReference1.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //dfile=Uri.parse(snapshot.child("backupUrl").getValue().toString());
-                Toast.makeText(context, "valuve listner", Toast.LENGTH_SHORT).show();
-                try {
-                    if (snapshot.child(uid).child("backupUrl").getValue().toString() == null){
-                        //Toast.makeText(context, "correct", Toast.LENGTH_SHORT).show();
-                    }
-                    //Toast.makeText(context, "success home", Toast.LENGTH_SHORT).show();
-                    //StorageReference getfile=upimref.child(uid+"/OR_MAN");
-                    //Uri filem= Uri.fromFile(new File(filename));
-                }catch (Exception e){
-                    //Toast.makeText(context, "catch runned", Toast.LENGTH_SHORT).show();
-
-                    progressDialog.startDialog();
-                    uploadDatabase();
-                }
-
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(context, "Restore Error", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-
-
-
-
-
-
             try {
                 databaseReference = FirebaseDatabase.getInstance().getReference("USERS").child(uid);
 
@@ -175,22 +138,13 @@ public class  home extends AppCompatActivity {
 
 
             String getlogdata = Paper.book().read(autolog.autologdata);
-        /*if (getlogdata.equals("false")){
-            welcome.setText("Welcome, Autolog Disabeld");
 
-        }
-        else if (getlogdata.equals("true")){
-            welcome.setText("Welcome, Autolog Enabeld");
-        }else {
-            welcome.setText(getlogdata);
-        }*/
 
             ima.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
                     Intent intent = new Intent(home.this, User_profile.class);
-
                     startActivity(intent);
                     finish();
 
@@ -256,66 +210,5 @@ public class  home extends AppCompatActivity {
 
     }
 
-    private void uploadDatabase() {
-        try {
-            Uri filem= Uri.fromFile(new File(filename));
 
-            //Toast.makeText(context, "file get", Toast.LENGTH_SHORT).show();
-
-
-            upimref.child(uid).child("OR_MAN").putFile(filem).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    String data=taskSnapshot.toString();
-                   // Toast.makeText(context, "tasksnapshot", Toast.LENGTH_SHORT).show();
-                    upimref.child(uid).child("OR_MAN").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                        @Override
-                        public void onSuccess(Uri uri) {
-                            //Toast.makeText(context, ""+String.valueOf(uri), Toast.LENGTH_SHORT).show();
-
-                                databaseReference1.child("backupUrl").setValue(String.valueOf(uri)).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        progressDialog.dismissDialog();
-                                        //Toast.makeText(context, "all com", Toast.LENGTH_SHORT).show();
-                                    }
-                                }).addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-
-                                        //Toast.makeText(context, "last fail", Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-
-
-
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            //Toast.makeText(context, "link shared failed 2", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                    Toast.makeText(context, "success"+taskSnapshot.toString(), Toast.LENGTH_SHORT).show();
-
-
-
-
-
-
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    //Toast.makeText(context, "failedlistner", Toast.LENGTH_SHORT).show();
-
-                }
-            });
-
-
-        } catch (Exception w) {
-            Toast.makeText(context, "" + w.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-
-    }
 }

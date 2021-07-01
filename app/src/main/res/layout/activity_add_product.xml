@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="#C5D6FF"
     android:layout_height="match_parent"
     tools:context=".add_product">
 
@@ -13,8 +14,10 @@
         android:layout_marginTop="50sp"
         android:id="@+id/proID"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/input_draw"
         android:ems="10"
+        android:paddingLeft="10dp"
         android:maxLines="1"
         android:layout_marginRight="10sp"
         android:layout_marginLeft="10sp"
@@ -25,8 +28,10 @@
     <EditText
         android:id="@+id/proTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/input_draw"
         android:ems="10"
+        android:paddingLeft="10dp"
         android:maxLines="1"
         android:layout_marginRight="10sp"
         android:layout_marginLeft="10sp"
@@ -38,13 +43,19 @@
         android:id="@+id/prolink"
         android:layout_width="match_parent"
         android:layout_height="150sp"
+        android:background="@drawable/input_draw2"
         android:ems="10"
+        android:gravity="center_horizontal"
+        android:textAlignment="textStart"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
         android:layout_marginRight="10sp"
         android:layout_marginLeft="10sp"
         android:layout_marginBottom="20sp"
         android:inputType="textPersonName"
 
-        android:hint="@string/product_link" />
+        android:hint="@string/product_link"
+        tools:ignore="RtlCompat" />
 
     <com.skydoves.elasticviews.ElasticImageView
         android:id="@+id/buttonp"

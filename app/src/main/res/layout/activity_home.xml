@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-
+    android:background="#C5D6FF"
     tools:context=".home">
 
 
@@ -98,6 +98,7 @@
             android:text="Dashboard"
             android:textColor="#fafafa"
             android:textSize="30sp"
+            android:textAlignment="textEnd"
             app:layout_constraintBottom_toBottomOf="@id/guideline13"
             app:layout_constraintEnd_toEndOf="@id/guideline19"
             app:layout_constraintStart_toStartOf="@id/lg1"
@@ -112,6 +113,7 @@
             android:text="Loading..."
             android:textColor="#fafafa"
             android:textSize="20sp"
+            android:textAlignment="textEnd"
             app:layout_constraintBottom_toBottomOf="@id/guideline12"
             app:layout_constraintEnd_toEndOf="@id/guideline19"
             app:layout_constraintStart_toStartOf="@id/lg1"
@@ -178,6 +180,7 @@
             android:id="@+id/imageView10"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@id/guideline12"
             app:layout_constraintEnd_toStartOf="@+id/lg2"
             app:layout_constraintStart_toEndOf="@+id/guideline19"

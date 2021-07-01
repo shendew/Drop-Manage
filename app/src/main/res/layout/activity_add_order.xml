@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-
+    android:background="#C5D6FF"
     android:layout_height="match_parent"
     tools:context=".add_order">
 <LinearLayout
@@ -18,8 +18,10 @@
         android:layout_marginTop="50sp"
         android:id="@+id/orderID"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/input_draw"
         android:ems="10"
+        android:paddingLeft="10dp"
         android:maxLines="1"
         android:layout_marginRight="10sp"
         android:layout_marginLeft="10sp"
@@ -30,8 +32,10 @@
     <EditText
         android:id="@+id/orderTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/input_draw"
         android:ems="10"
+        android:paddingLeft="10dp"
         android:maxLines="1"
         android:layout_marginRight="10sp"
         android:layout_marginLeft="10sp"
@@ -43,19 +47,27 @@
         android:id="@+id/contactDetails"
         android:layout_width="match_parent"
         android:layout_height="150sp"
+        android:background="@drawable/input_draw2"
+        android:textAlignment="textStart"
+        android:gravity="center_horizontal"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
         android:ems="10"
         android:layout_marginRight="10sp"
         android:layout_marginLeft="10sp"
         android:layout_marginBottom="20sp"
         android:inputType="textPersonName"
 
-        android:hint="@string/contact_details" />
+        android:hint="@string/contact_details"
+        tools:ignore="RtlCompat" />
 
     <EditText
         android:id="@+id/trackingNumber"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/input_draw"
         android:ems="10"
+        android:paddingLeft="10dp"
         android:maxLines="1"
         android:layout_marginRight="10sp"
         android:layout_marginLeft="10sp"
@@ -67,9 +79,11 @@
     <EditText
         android:id="@+id/shippedDate"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/input_draw"
         android:ems="10"
         android:maxLines="1"
+        android:paddingLeft="10dp"
         android:layout_marginRight="10sp"
         android:layout_marginLeft="10sp"
         android:layout_marginBottom="20sp"
@@ -80,8 +94,10 @@
     <EditText
         android:id="@+id/completedDate"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/input_draw"
         android:ems="10"
+        android:paddingLeft="10dp"
         android:maxLines="1"
         android:layout_marginRight="10sp"
         android:layout_marginLeft="10sp"

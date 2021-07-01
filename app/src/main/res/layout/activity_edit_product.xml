@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
+    android:background="#C5D6FF"
     android:gravity="center"
 
     tools:context=".edit_product">
@@ -15,9 +15,11 @@
         android:layout_marginTop="50sp"
         android:id="@+id/proID"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/input_draw"
         android:ems="10"
         android:maxLines="1"
+        android:paddingLeft="10dp"
         android:layout_marginRight="10sp"
         android:layout_marginLeft="10sp"
         android:layout_marginBottom="20sp"
@@ -27,9 +29,11 @@
     <EditText
         android:id="@+id/proTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/input_draw"
         android:ems="10"
         android:maxLines="1"
+        android:paddingLeft="10dp"
         android:layout_marginRight="10sp"
         android:layout_marginLeft="10sp"
         android:layout_marginBottom="20sp"
@@ -39,14 +43,20 @@
     <EditText
         android:id="@+id/prolink"
         android:layout_width="match_parent"
-        android:layout_height="150sp"
+        android:layout_height="150dp"
+        android:background="@drawable/input_draw2"
         android:ems="10"
+        android:gravity="center_horizontal"
+        android:textAlignment="textStart"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
         android:layout_marginRight="10sp"
         android:layout_marginLeft="10sp"
         android:layout_marginBottom="20sp"
         android:inputType="textPersonName"
 
-        android:hint="Contact Details" />
+        android:hint="Contact Details"
+        tools:ignore="RtlCompat" />
 
     <com.skydoves.elasticviews.ElasticImageView
         android:id="@+id/buttonp"
